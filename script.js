@@ -8,6 +8,7 @@ let model, webcam, ctx, labelContainer, maxPredictions;
 const countingBox = document.querySelector("div#counting-box");
 let status = "stand";
 let count = "0";
+const max = 5;
 
 async function init() {
   const modelURL = URL + "model.json";
@@ -56,6 +57,10 @@ async function predict() {
     if (status === "sit") {
       count++;
       countingBox.innerHTML = count;
+      if (count >= max) {
+        countingBox.innerHTML = "끝";
+        webcam.stop();
+      }
     }
     status = "stand";
   } else if (prediction[1].probability.toFixed(2) == 1.0) {
