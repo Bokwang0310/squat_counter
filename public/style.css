@@ -11,8 +11,30 @@ body {
   text-align: center;
 }
 
+.counting-wrapper {
+  display: flex;
+}
+
 .counting-box {
-  font-size: 5rem;
+  flex: 1;
+  height: 100vh;
+  line-height: 100vh;
+  text-align: center;
+  font-size: 15rem;
+}
+
+.canvas-wrapper {
+  flex: 1;
+  height: 100vh;
+  line-height: 100vh;
+  text-align: center;
+  align-content: center;
+}
+
+canvas {
+  display: inline;
+  margin: 0 auto 0 auto;
+  vertical-align: middle;
 }
 
 .hidden {
