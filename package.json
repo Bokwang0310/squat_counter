@@ -1,0 +1,22 @@
+{
+  "name": "squat_counter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bokwang0310/squat_counter.git"
+  },
+  "author": "Bokwang0310",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bokwang0310/squat_counter/issues"
+  },
+  "homepage": "https://github.com/Bokwang0310/squat_counter#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
