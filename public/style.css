@@ -1,7 +1,11 @@
-div#counting-box {
+div.waiting-box {
   font-size: 5rem;
 }
 
-div#waiting-box {
+div.counting-box {
   font-size: 5rem;
+}
+
+div.hidden {
+  display: none;
 }

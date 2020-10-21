@@ -5,8 +5,8 @@
 const URL = "./model/";
 let model, webcam, ctx, labelContainer, maxPredictions;
 
-const countingBox = document.querySelector("div#counting-box");
-const waitingBox = document.querySelector("div#waiting-box");
+const countingBox = document.querySelector("div.counting-box");
+const waitingBox = document.querySelector("div.waiting-box");
 
 let status = "stand";
 let count = "0"; // Amount of squats done
@@ -47,6 +47,9 @@ async function init() {
     });
   }
   await countdown();
+
+  waitingBox.classList.add("hidden");
+  countingBox.classList.remove("hidden");
 
   await webcam.play();
   window.requestAnimationFrame(loop);
