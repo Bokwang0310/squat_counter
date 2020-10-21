@@ -9,9 +9,9 @@
   <body>
     <div class="waiting-box">준비</div>
     <div class="counting-box hidden">0개</div>
-    <button class="start-btn" type="button">Start</button>
-    <div><canvas id="canvas"></canvas></div>
-    <div id="label-container"></div>
+    <!-- <button class="start-btn" type="button">Start</button> -->
+    <div class="hidden"><canvas id="canvas"></canvas></div>
+    <div class="hidden" id="label-container"></div>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
     <script src="./script.js"></script>
@@ -20,6 +20,5 @@
 
 <!-- 
   TODO : 
-    카운팅 박스, "n개"처럼 하기
     박스랑 웹캠 화면 비율 조정하기 (핸드폰에서도 잘 보일 수 있도록) 
 -->

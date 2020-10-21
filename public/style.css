@@ -1,11 +1,20 @@
-div.waiting-box {
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+.waiting-box {
+  height: 100vh;
+  line-height: 100vh;
+  font-size: 20rem;
+  text-align: center;
+}
+
+.counting-box {
   font-size: 5rem;
 }
 
-div.counting-box {
-  font-size: 5rem;
-}
-
-div.hidden {
+.hidden {
   display: none;
 }

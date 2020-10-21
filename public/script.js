@@ -5,16 +5,16 @@
 const URL = "./model/";
 let model, webcam, ctx, labelContainer, maxPredictions;
 
-const countingBox = document.querySelector("div.counting-box");
-const waitingBox = document.querySelector("div.waiting-box");
-const startBtn = document.querySelector("button.start-btn");
+const waitingBox = document.querySelector(".waiting-box");
+const countingBox = document.querySelector(".counting-box");
+const canvas = document.getElementById("canvas");
 
 let status = "stand";
 let count = "0"; // Amount of squats done
 let time = 5; // Waiting time before cam turns on
 const max = 5; // Amount of squats in a set
 
-startBtn.addEventListener("click", () => {
+waitingBox.addEventListener("click", () => {
   init();
 });
 
@@ -51,12 +51,13 @@ async function init() {
 
   waitingBox.classList.add("hidden");
   countingBox.classList.remove("hidden");
+  canvas.parentElement.classList.remove("hidden");
 
   await webcam.play();
   window.requestAnimationFrame(loop);
 
   // append/get elements to the DOM
-  const canvas = document.getElementById("canvas");
+  // const canvas = document.getElementById("canvas");
   canvas.width = size;
   canvas.height = size;
   ctx = canvas.getContext("2d");
