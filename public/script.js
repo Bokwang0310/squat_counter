@@ -7,11 +7,29 @@ let model, webcam, ctx, labelContainer, maxPredictions;
 
 const countingBox = document.querySelector("div.counting-box");
 const waitingBox = document.querySelector("div.waiting-box");
+const startBtn = document.querySelector("button.start-btn");
 
 let status = "stand";
 let count = "0"; // Amount of squats done
 let time = 5; // Waiting time before cam turns on
 const max = 5; // Amount of squats in a set
+
+startBtn.addEventListener("click", () => {
+  init();
+});
+
+function countdown() {
+  return new Promise((resolve, reject) => {
+    const timer = setInterval(() => {
+      waitingBox.innerHTML = time;
+      time--;
+      if (time === -1) {
+        clearInterval(timer);
+        resolve(true);
+      }
+    }, 1000);
+  });
+}
 
 async function init() {
   const modelURL = URL + "model.json";
@@ -29,18 +47,6 @@ async function init() {
   webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
   await webcam.setup(); // request access to the webcam
 
-  function countdown() {
-    return new Promise((resolve, reject) => {
-      const timer = setInterval(() => {
-        waitingBox.innerHTML = time;
-        time--;
-        if (time === -1) {
-          clearInterval(timer);
-          resolve(true);
-        }
-      }, 1000);
-    });
-  }
   await countdown();
 
   waitingBox.classList.add("hidden");
