@@ -13,11 +13,6 @@ let count = "0"; // Amount of squats done
 let time = 5; // Waiting time before cam turns on
 const max = 5; // Amount of squats in a set
 
-function sleep(delay) {
-  var start = new Date().getTime();
-  while (new Date().getTime() < start + delay);
-}
-
 async function init() {
   const modelURL = URL + "model.json";
   const metadataURL = URL + "metadata.json";
@@ -39,7 +34,7 @@ async function init() {
       const timer = setInterval(() => {
         waitingBox.innerHTML = time;
         time--;
-        if (time === 0) {
+        if (time === -1) {
           clearInterval(timer);
           resolve(true);
         }
@@ -82,7 +77,7 @@ async function predict() {
   if (prediction[0].probability.toFixed(2) == 1.0) {
     if (status === "sit") {
       count++;
-      countingBox.innerHTML = count;
+      countingBox.innerHTML = `${count}개`;
       if (count >= max) {
         countingBox.innerHTML = "끝";
         webcam.stop();
