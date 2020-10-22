@@ -9,6 +9,7 @@ const waitingBox = document.querySelector(".waiting-box");
 const countingBox = document.querySelector(".counting-box");
 const canvas = document.getElementById("canvas");
 const maxInput = document.querySelector(".max-input");
+const waitingWrapper = document.querySelector(".waiting-wrapper");
 
 let status = "stand";
 let count = "0"; // Amount of squats done
@@ -57,6 +58,7 @@ async function init(max) {
 
   waitingBox.classList.add("hidden");
   maxInput.classList.add("hidden");
+  waitingWrapper.classList.add("hidden");
   countingBox.classList.remove("hidden");
   canvas.parentElement.classList.remove("hidden");
 
