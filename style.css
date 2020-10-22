@@ -17,6 +17,10 @@ body {
   user-select: none;
 }
 
+.waiting-box:hover {
+  color: darkorange;
+}
+
 .counting-wrapper {
   display: flex;
 }
