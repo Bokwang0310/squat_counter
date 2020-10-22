@@ -12,7 +12,7 @@ const canvas = document.getElementById("canvas");
 let status = "stand";
 let count = "0"; // Amount of squats done
 let time = 5; // Waiting time before cam turns on
-const max = 5; // Amount of squats in a set
+const max = 40; // Amount of squats in a set
 
 waitingBox.addEventListener("click", init, { once: true });
 

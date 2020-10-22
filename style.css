@@ -9,6 +9,12 @@ body {
   line-height: 100vh;
   font-size: 10rem;
   text-align: center;
+  /* prevent dragging */
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .counting-wrapper {
@@ -21,6 +27,12 @@ body {
   line-height: 100vh;
   text-align: center;
   font-size: 6rem;
+  /* prevent dragging */
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .canvas-wrapper {
