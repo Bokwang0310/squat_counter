@@ -12,9 +12,16 @@ const canvas = document.getElementById("canvas");
 let status = "stand";
 let count = "0"; // Amount of squats done
 let time = 5; // Waiting time before cam turns on
-const max = 40; // Amount of squats in a set
+let max = 40; // Amount of goal squat
 
-waitingBox.addEventListener("click", init, { once: true });
+waitingBox.addEventListener(
+  "click",
+  () => {
+    max = document.querySelector("input#max-amount").value;
+    init();
+  },
+  { once: true }
+);
 
 function countdown() {
   return new Promise((resolve, reject) => {
@@ -29,7 +36,7 @@ function countdown() {
   });
 }
 
-async function init() {
+async function init(max) {
   const modelURL = URL + "model.json";
   const metadataURL = URL + "metadata.json";
 
