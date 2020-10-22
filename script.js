@@ -8,6 +8,7 @@ let model, webcam, ctx, labelContainer, maxPredictions;
 const waitingBox = document.querySelector(".waiting-box");
 const countingBox = document.querySelector(".counting-box");
 const canvas = document.getElementById("canvas");
+const maxInput = document.querySelector(".max-input");
 
 let status = "stand";
 let count = "0"; // Amount of squats done
@@ -17,7 +18,7 @@ let max = 40; // Amount of goal squat
 waitingBox.addEventListener(
   "click",
   () => {
-    max = document.querySelector("input#max-amount").value;
+    max = maxInput.value;
     init();
   },
   { once: true }
@@ -55,6 +56,7 @@ async function init(max) {
   await countdown();
 
   waitingBox.classList.add("hidden");
+  maxInput.classList.add("hidden");
   countingBox.classList.remove("hidden");
   canvas.parentElement.classList.remove("hidden");
 
