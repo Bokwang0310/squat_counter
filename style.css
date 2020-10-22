@@ -7,9 +7,12 @@ body {
 .waiting-wrapper {
   height: 100vh;
   line-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .waiting-box {
+  max-height: 25%;
   font-size: 6rem;
   text-align: center;
   /* prevent dragging */
@@ -22,6 +25,19 @@ body {
 
 .waiting-box:hover {
   color: darkorange;
+}
+
+.input-wrapper {
+  text-align: center;
+  max-height: 25%;
+}
+
+.max-input {
+  font-size: 1.5rem;
+  width: 5rem;
+  text-align: center;
+  border: black solid 1px;
+  border-radius: 0.1rem;
 }
 
 .counting-wrapper {
