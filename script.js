@@ -14,9 +14,7 @@ let count = "0"; // Amount of squats done
 let time = 5; // Waiting time before cam turns on
 const max = 5; // Amount of squats in a set
 
-waitingBox.addEventListener("click", () => {
-  init();
-});
+waitingBox.addEventListener("click", init, { once: true });
 
 function countdown() {
   return new Promise((resolve, reject) => {
